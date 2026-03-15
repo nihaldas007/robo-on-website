@@ -51,9 +51,9 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Learn</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li><Link href="/courses" className="hover:text-primary transition-colors">All Courses</Link></li>
-              <li><Link href="/courses/iot" className="hover:text-primary transition-colors">Internet of Things</Link></li>
-              <li><Link href="/courses/robotics" className="hover:text-primary transition-colors">Basic Robotics</Link></li>
-              <li><Link href="/courses/pcb-design" className="hover:text-primary transition-colors">PCB Design Masterclass</Link></li>
+              <li><Link href="/courses" className="hover:text-primary transition-colors">Internet of Things</Link></li>
+              <li><Link href="/courses" className="hover:text-primary transition-colors">Basic Robotics</Link></li>
+              <li><Link href="/courses" className="hover:text-primary transition-colors">PCB Design Masterclass</Link></li>
             </ul>
           </div>
 

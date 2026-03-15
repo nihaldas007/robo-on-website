@@ -46,8 +46,8 @@ export default function Courses() {
   });
 
   return (
-    <div className="w-full flex justify-center pb-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+    <div className="w-full flex justify-center pb-32 overflow-hidden">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6 pt-4 md:pt-8">
           <div className="max-w-xl">
             <motion.h1 

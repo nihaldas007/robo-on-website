@@ -5,7 +5,7 @@ import { memo } from "react";
 const CircuitBackground = memo(() => {
   return (
     <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden opacity-10">
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'hidden' }}>
         <defs>
           <pattern id="circuit-pattern" x="0" y="0" width="500" height="500" patternUnits="userSpaceOnUse">
             {/* Elegant, ultra-minimalist background trace without pads */}

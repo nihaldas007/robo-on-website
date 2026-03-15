@@ -227,7 +227,7 @@ export default function CourseDetailsClient() {
   }
 
   return (
-    <div className="w-full pb-32">
+    <div className="w-full pb-32 overflow-hidden">
       <EnrollmentModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
@@ -235,10 +235,9 @@ export default function CourseDetailsClient() {
         coursePrice={price}
         courseId={params.id as string}
       />
-      {/* Course Hero Header */}
       <div className="relative border-b border-white/10 bg-black/60 pt-16 pb-12 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(ellipse at top, rgba(60,179,150,0.08) 0%, rgba(60,179,150,0) 70%)' }} />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-12 relative z-10">
+        <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-12 relative z-10">
           
           <div className="lg:w-2/3">
             <div className="flex gap-2 mb-6">

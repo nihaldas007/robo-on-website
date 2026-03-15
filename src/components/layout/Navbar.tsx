@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import logo from "../../../public/logo.png";
 import { motion } from "framer-motion";
 import { Menu, X, Cpu, User as UserIcon, LogOut } from "lucide-react";
 import { useState } from "react";
@@ -31,11 +29,9 @@ export default function Navbar() {
         <div className="flex-shrink-0 flex items-center">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="p-2 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors border border-primary/20">
-              <Image 
-                src={logo} 
+              <img 
+                src="/robo-on-website/logo.png" 
                 alt="RoboON Logo" 
-                width={120} 
-                height={32} 
                 className="h-8 w-auto object-contain brightness-0 invert opacity-90 transition-transform group-hover:scale-110" 
               />
             </div>

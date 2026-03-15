@@ -22,8 +22,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-4 left-0 right-0 z-50 px-4 flex justify-center pointer-events-none">
-      <div className="max-w-7xl w-full glass border border-white/10 rounded-2xl md:rounded-full px-6 py-3 flex items-center justify-between pointer-events-auto shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl transition-all duration-300">
+    <nav className="fixed top-4 left-0 right-0 z-50 px-4 flex justify-center pointer-events-none w-full box-border">
+      <div className="max-w-7xl w-full glass border border-white/10 rounded-2xl md:rounded-full px-4 sm:px-6 py-3 flex items-center justify-between pointer-events-auto shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl transition-all duration-300 overflow-hidden">
         
         {/* Logo Section */}
         <div className="flex-shrink-0 flex items-center">

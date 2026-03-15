@@ -47,8 +47,8 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 overflow-hidden">
         {/* Removed grid pattern */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full -z-10 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(41,42,58,0.3) 0%, rgba(41,42,58,0) 70%)' }}></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full -z-10 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }}></div>
+        <div className="absolute top-0 right-0 w-full max-w-[500px] h-full max-h-[500px] rounded-full -z-10 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(41,42,58,0.3) 0%, rgba(41,42,58,0) 70%)' }}></div>
+        <div className="absolute bottom-0 left-0 w-full max-w-[500px] h-full max-h-[500px] rounded-full -z-10 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }}></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.h1 

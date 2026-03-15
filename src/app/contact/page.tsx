@@ -47,8 +47,8 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen pt-32 pb-20 px-4 relative overflow-hidden">
       {/* Visual background elements */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full -z-10 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full -z-10 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(41,42,58,0.2) 0%, rgba(41,42,58,0) 70%)' }} />
+      <div className="absolute top-0 right-0 w-full max-w-[500px] h-full max-h-[500px] rounded-full -z-10 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
+      <div className="absolute bottom-0 left-0 w-full max-w-[400px] h-full max-h-[400px] rounded-full -z-10 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(41,42,58,0.2) 0%, rgba(41,42,58,0) 70%)' }} />
 
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-4 mb-8">

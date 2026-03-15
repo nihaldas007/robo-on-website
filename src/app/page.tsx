@@ -68,7 +68,7 @@ export default function Home() {
           <Cpu size={800} strokeWidth={0.5} />
         </div>
         
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.15) 0%, rgba(60,179,150,0) 70%)' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-full max-h-[600px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.15) 0%, rgba(60,179,150,0) 70%)' }} />
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -150,7 +150,7 @@ export default function Home() {
 
       {/* Featured Projects Section */}
       <section id="projects" className="w-full relative py-24 overflow-hidden">
-        <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
+        <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-full max-w-[500px] h-full max-h-[500px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -206,7 +206,7 @@ export default function Home() {
           <Cpu size={500} strokeWidth={0.5} />
         </div>
 
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(41,42,58,0.4) 0%, rgba(41,42,58,0) 70%)' }} />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full max-w-[500px] h-full max-h-[500px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(41,42,58,0.4) 0%, rgba(41,42,58,0) 70%)' }} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -262,7 +262,7 @@ export default function Home() {
       {/* Final Call to Action Section */}
       <section className="w-full relative py-32 overflow-hidden bg-black">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full pointer-events-none transform-gpu" style={{ background: 'radial-gradient(ellipse, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-full max-h-[400px] rounded-full pointer-events-none transform-gpu" style={{ background: 'radial-gradient(ellipse, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
         </div>
 
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">

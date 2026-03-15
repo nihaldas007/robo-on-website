@@ -13,9 +13,11 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <>
       {!hideNavigation && <Navbar />}
-      <main className={`flex-grow ${!hideNavigation ? "pt-20" : ""}`}> 
-        {children}
-      </main>
+      <div className="flex-grow flex flex-col overflow-x-hidden">
+        <main className={`flex-grow ${!hideNavigation ? "pt-20" : ""}`}> 
+          {children}
+        </main>
+      </div>
       {!hideNavigation && <Footer />}
     </>
   );

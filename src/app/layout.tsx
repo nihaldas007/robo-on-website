@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   keywords: "Robotics, Embedded Systems, PCB Design, IoT, Nextjs, Web Development, Online Courses",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 import ClientLayout from "@/components/layout/ClientLayout";
 
 export default function RootLayout({

@@ -1,3 +1,7 @@
+import { db } from "@/lib/firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import CourseDetailsClient from "@/components/course-pages/CourseDetailsClient";
+
 export const dynamic = 'force-static';
 export const dynamicParams = false;
 

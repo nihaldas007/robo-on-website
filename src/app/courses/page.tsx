@@ -85,13 +85,13 @@ export default function Courses() {
           </div>
         </div>
 
-        {/* Categories */}
-        <div className="flex overflow-x-auto pb-4 mb-12 gap-3 hide-scrollbar">
+        {/* Categories - Scrollable on mobile */}
+        <div className="flex overflow-x-auto pb-4 mb-12 gap-3 no-scrollbar scroll-smooth -mx-4 px-4 sm:mx-0 sm:px-0">
           {categories.map((cat) => (
             <button 
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${selectedCategory === cat ? 'bg-primary text-black' : 'glass hover:bg-white/10 text-gray-300'}`}
+              className={`px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors flex-shrink-0 ${selectedCategory === cat ? 'bg-primary text-black' : 'glass hover:bg-white/10 text-gray-300'}`}
             >
               {cat}
             </button>

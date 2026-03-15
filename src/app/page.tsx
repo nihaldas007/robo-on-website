@@ -262,7 +262,7 @@ export default function Home() {
       {/* Final Call to Action Section */}
       <section className="w-full relative py-32 overflow-hidden bg-black">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-full max-h-[400px] rounded-full pointer-events-none transform-gpu" style={{ background: 'radial-gradient(ellipse, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-full max-h-[400px] rounded-full pointer-events-none transform-gpu overflow-hidden" style={{ background: 'radial-gradient(ellipse, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
         </div>
 
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">

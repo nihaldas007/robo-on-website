@@ -9,7 +9,13 @@ export default function Footer() {
           
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 group mb-4">
-              <img src="/robo-on-website/logo.png" alt="RoboON Logo" className="h-16 w-auto object-contain transition-transform group-hover:scale-105 brightness-0 invert opacity-90" />
+              <Image 
+                src="/logo.png" 
+                alt="RoboON Logo" 
+                width={160} 
+                height={64} 
+                className="h-16 w-auto object-contain transition-transform group-hover:scale-105 brightness-0 invert opacity-90" 
+              />
             </Link>
             <p className="text-gray-400 text-sm mb-6 max-w-xs">
               Empowering innovation through Embedded Systems, Robotics, PCB Design, and cutting-edge software solutions.

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import NextImage from "next/image";
+import logo from "../../../public/logo.png";
 import { Cpu, Facebook, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
@@ -9,8 +11,8 @@ export default function Footer() {
           
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 group mb-4">
-              <img 
-                src="/robo-on-website/logo.png" 
+              <NextImage 
+                src={logo} 
                 alt="RoboON Logo" 
                 className="h-16 w-auto object-contain transition-transform group-hover:scale-105 brightness-0 invert opacity-90" 
               />

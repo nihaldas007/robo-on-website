@@ -1,4 +1,6 @@
 "use client";
+import NextImage from "next/image";
+import logo from "../../../public/logo.png";
 
 import { useState } from "react";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, sendEmailVerification, updateProfile, signOut } from "firebase/auth";
@@ -90,14 +92,14 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center relative overscroll-none pt-20">
+    <div className="min-h-[80vh] flex items-center justify-center relative overscroll-none pt-20 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.15) 0%, rgba(60,179,150,0) 70%)' }} />
       
       <div className="glass-card w-full max-w-md p-8 rounded-3xl border border-white/5 relative z-10 shadow-2xl">
         <div className="flex flex-col items-center mb-8">
           <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-4 border border-primary/20">
-            <img 
-              src="/robo-on-website/logo.png" 
+            <NextImage 
+              src={logo} 
               alt="RoboON Icon" 
               className="w-10 h-10 object-contain brightness-0 invert opacity-90" 
             />

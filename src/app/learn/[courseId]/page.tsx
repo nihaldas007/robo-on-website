@@ -1,3 +1,4 @@
+export const dynamic = 'force-static';
 import CoursePlayerClient from "@/components/course-pages/CoursePlayerClient";
 
 export const dynamicParams = false;

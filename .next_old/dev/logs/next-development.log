@@ -1,0 +1,16 @@
+[00:00:01.724] Server  LOG     ✓ Ready in 1240ms
+[00:00:25.463] Server  LOG     Firebase Init Payload: {}
+[00:00:25.897] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:25.897] Browser LOG     Firebase Init Payload: {"apiKey":"AIzaSyAcfBwodM0KEnL5HLPegokqs2A5nhbhHlY","appId":"1:741591827381:web:cef6988d5a6edc926c8ffc","authDomain":"main-website-93895.firebaseapp.com","messagingSenderId":"741591827381","projectId":"main-website-93895","storageBucket":"main-website-93895.firebasestorage.app"}
+[00:00:26.321] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:26.321] Browser LOG     Firebase Init Payload: {"apiKey":"AIzaSyAcfBwodM0KEnL5HLPegokqs2A5nhbhHlY","appId":"1:741591827381:web:cef6988d5a6edc926c8ffc","authDomain":"main-website-93895.firebaseapp.com","messagingSenderId":"741591827381","projectId":"main-website-93895","storageBucket":"main-website-93895.firebasestorage.app"}
+[00:00:37.354] Browser LOG     Firebase API Key Present: true
+[00:00:37.354] Browser LOG     API Key Value: AIzaSyAcfBwodM0KEnL5HLPegokqs2A5nhbhHlY
+[00:00:38.042] Browser ERROR   {"code":"auth/configuration-not-found","customData":{},"name":"FirebaseError"}
+[00:00:43.080] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:43.205] Browser LOG     Firebase Init Payload: {"apiKey":"AIzaSyAcfBwodM0KEnL5HLPegokqs2A5nhbhHlY","appId":"1:741591827381:web:cef6988d5a6edc926c8ffc","authDomain":"main-website-93895.firebaseapp.com","messagingSenderId":"741591827381","projectId":"main-website-93895","storageBucket":"main-website-93895.firebasestorage.app"}
+[00:00:51.204] Browser LOG     Firebase API Key Present: true
+[00:00:51.204] Browser LOG     API Key Value: AIzaSyAcfBwodM0KEnL5HLPegokqs2A5nhbhHlY
+[00:00:51.628] Browser ERROR   {"code":"auth/configuration-not-found","customData":{},"name":"FirebaseError"}
+[00:01:37.375] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:37.503] Browser LOG     Firebase Init Payload: {"apiKey":"AIzaSyAcfBwodM0KEnL5HLPegokqs2A5nhbhHlY","appId":"1:741591827381:web:cef6988d5a6edc926c8ffc","authDomain":"main-website-93895.firebaseapp.com","messagingSenderId":"741591827381","projectId":"main-website-93895","storageBucket":"main-website-93895.firebasestorage.app"}

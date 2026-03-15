@@ -5,6 +5,8 @@ import { signInWithEmailAndPassword, createUserWithEmailAndPassword, sendEmailVe
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import logo from "../../../public/logo.png";
 import { Cpu, AlertCircle, Loader2, CheckCircle2 } from "lucide-react";
 
 export default function Login() {
@@ -97,7 +99,7 @@ export default function Login() {
         <div className="flex flex-col items-center mb-8">
           <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-4 border border-primary/20">
             <Image 
-              src="/logo.png" 
+              src={logo} 
               alt="RoboON Icon" 
               width={40} 
               height={40} 

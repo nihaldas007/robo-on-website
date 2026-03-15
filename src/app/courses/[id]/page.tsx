@@ -176,6 +176,10 @@ interface Lesson {
   order: number;
 }
 
+export function generateStaticParams() {
+  return [];
+}
+
 export default function CourseDetails() {
   const params = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);

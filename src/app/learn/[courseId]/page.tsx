@@ -16,6 +16,10 @@ interface Lesson {
   order: number;
 }
 
+export function generateStaticParams() {
+  return [];
+}
+
 export default function CoursePlayer() {
   const params = useParams();
   const { user, userData, role, loading: authLoading } = useAuth();

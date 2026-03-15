@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
   basePath: '/robo-on-website',
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },

@@ -199,13 +199,13 @@ export default function CoursePlayerClient() {
   }
 
   return (
-    <div className="flex h-screen bg-[#060606] overflow-hidden">
+    <div className="flex flex-col lg:flex-row min-h-screen lg:h-screen bg-[#060606] lg:overflow-hidden">
       
       {/* Video Stream Area */}
-      <div className="flex-1 flex flex-col min-h-0 relative">
+      <div className="flex-1 flex flex-col min-h-0 relative w-full overflow-x-hidden">
         
         {/* Top Header inside player */}
-        <div className="h-16 border-b border-white/5 bg-black/40 backdrop-blur-md flex items-center justify-between px-6 z-30 shrink-0">
+        <div className="h-14 md:h-16 border-b border-white/5 bg-black/40 backdrop-blur-md flex items-center justify-between px-4 md:px-6 z-30 shrink-0">
           <div className="flex items-center gap-4 overflow-hidden">
             <Link href="/dashboard" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white transition-all hover:bg-white/10 shrink-0">
               <ChevronLeft size={20} />
@@ -230,8 +230,8 @@ export default function CoursePlayerClient() {
         </div>
 
         {/* Video Player Area */}
-        <div className="flex-1 bg-black relative flex items-center justify-center overflow-hidden">
-           <div className="w-full max-h-full aspect-video shadow-[0_0_100px_rgba(255,87,34,0.1)] relative">
+        <div className="flex-shrink-0 bg-black relative flex items-center justify-center overflow-hidden aspect-video lg:flex-1 lg:aspect-auto">
+           <div className="w-full h-full max-h-full aspect-video shadow-[0_0_100px_rgba(255,87,34,0.1)] relative">
              {loading ? (
                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#0a0a0a]">
                   <Loader2 className="animate-spin text-primary" size={40} />
@@ -266,7 +266,7 @@ export default function CoursePlayerClient() {
         </div>
 
         {/* Course Info Tabs Below Video */}
-        <div className="h-64 sm:h-auto overflow-y-auto p-8 custom-scrollbar bg-black/20">
+        <div className="flex-1 lg:flex-none lg:h-auto overflow-y-auto p-4 md:p-8 custom-scrollbar bg-black/20">
           <div className="max-w-4xl mx-auto">
             <div className="flex gap-8 border-b border-white/5 mb-8 overflow-x-auto no-scrollbar">
               <button className="pb-4 border-b-2 border-primary text-white font-bold text-xs uppercase tracking-widest">Overview</button>
@@ -294,7 +294,7 @@ export default function CoursePlayerClient() {
 
       {/* Sidebar Syllabus */}
       <div 
-        className={`w-80 border-l border-white/5 bg-[#080808] flex flex-col transition-all duration-300 fixed lg:relative inset-y-0 right-0 z-40 lg:z-10 ${
+        className={`w-full lg:w-80 border-l border-white/5 bg-[#080808] flex flex-col transition-all duration-300 fixed lg:relative inset-y-0 right-0 z-40 lg:z-10 ${
           sidebarOpen ? "translate-x-0" : "translate-x-full lg:hidden"
         }`}
       >

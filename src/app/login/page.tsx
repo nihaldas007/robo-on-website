@@ -96,7 +96,7 @@ export default function Login() {
       <div className="glass-card w-full max-w-md p-8 rounded-3xl border border-white/5 relative z-10 shadow-2xl">
         <div className="flex flex-col items-center mb-8">
           <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-4 border border-primary/20">
-            <img src="/logo.png" alt="RoboON Icon" className="w-10 h-10 object-contain brightness-0 invert opacity-90" />
+            <img src="/robo-on-website/logo.png" alt="RoboON Icon" className="w-10 h-10 object-contain brightness-0 invert opacity-90" />
           </div>
           <h1 className="text-3xl font-extrabold text-white tracking-tight">
             {isLogin ? "Welcome Back" : "Create Account"}

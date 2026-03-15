@@ -29,7 +29,7 @@ export default function Navbar() {
         <div className="flex-shrink-0 flex items-center">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="p-2 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors border border-primary/20">
-              <img src="/logo.png" alt="RoboON Logo" className="h-8 w-auto object-contain brightness-0 invert opacity-90 transition-transform group-hover:scale-110" />
+              <img src="/robo-on-website/logo.png" alt="RoboON Logo" className="h-8 w-auto object-contain brightness-0 invert opacity-90 transition-transform group-hover:scale-110" />
             </div>
           </Link>
         </div>

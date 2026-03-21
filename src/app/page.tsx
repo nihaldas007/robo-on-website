@@ -8,42 +8,18 @@ import { db } from "@/lib/firebase";
 import { collection, getDocs, query, limit, orderBy, where } from "firebase/firestore";
 
 export default function Home() {
-  const [featuredCourses, setFeaturedCourses] = useState<any[]>([]);
-  const [featuredProjects, setFeaturedProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [videoUrl, setVideoUrl] = useState<string>("");
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  // Progressive video loader for mobile stability
-  useEffect(() => {
-    const videoPath = "/robo-on-website/hero-video.mp4";
-    
-    // Fetch video as blob to bypass mobile streaming stalls
-    fetch(videoPath)
-      .then(res => res.blob())
-      .then(blob => {
-        const url = URL.createObjectURL(blob);
-        setVideoUrl(url);
-      })
-      .catch(err => {
-        console.error("Video fetch failed, falling back to direct URL:", err);
-        setVideoUrl(videoPath);
-      });
-
-    return () => {
-      if (videoUrl) URL.revokeObjectURL(videoUrl);
-    };
-  }, []);
 
   // Programmatic manual play trigger for mobile devices
   useEffect(() => {
-    if (videoRef.current && videoUrl) {
+    if (videoRef.current) {
       videoRef.current.muted = true;
       videoRef.current.play().catch(error => {
         console.log("Autoplay was prevented by the browser:", error);
       });
     }
-  }, [videoUrl]);
+  }, []);
 
   useEffect(() => {
     async function fetchData() {
@@ -152,50 +128,31 @@ export default function Home() {
           style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.15) 0%, rgba(22,163,74,0) 70%)' }} 
         />
 
-        {/* Right Side: Video Components */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.1 }}
-          className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center"
-        >
+        {/* Right Side: Video Components (No Animation) */}
+        <div className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center">
           <div className="w-full flex items-center justify-center lg:w-[600px] relative">
-            {/* 
-              CUSTOMIZE VIDEO CROP HERE:
-              Adjust the percentages inside inset(...) to cut off sections of your video snippet.
-              Format: inset(top% right% bottom% left%)
-            */}
-            {videoUrl ? (
-              <video
-                id="hero-video"
-                ref={videoRef}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                className="w-full h-auto object-contain origin-center pointer-events-none"
-                style={{ clipPath: 'inset(0% 0% 14% 0%)' }}
-                src={videoUrl}
-                onCanPlay={() => {
-                  if (videoRef.current) {
-                    videoRef.current.muted = true;
-                    videoRef.current.play();
-                  }
-                }}
-              >
-                Your browser does not support the video tag.
-              </video>
-            ) : (
-              <div className="w-full aspect-video flex items-center justify-center bg-black/20 rounded-2xl border border-white/5">
-                <div className="flex flex-col items-center gap-2">
-                  <Cpu className="animate-pulse text-primary/40" size={40} />
-                  <span className="text-xs text-primary/40 font-bold tracking-[0.2em] uppercase">Initializing System...</span>
-                </div>
-              </div>
-            )}
+            <video
+              id="hero-video"
+              ref={videoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="w-full h-auto object-contain origin-center pointer-events-none"
+              style={{ clipPath: 'inset(0% 0% 14% 0%)' }}
+              src="/robo-on-website/hero-video.mp4"
+              onCanPlay={() => {
+                if (videoRef.current) {
+                  videoRef.current.muted = true;
+                  videoRef.current.play();
+                }
+              }}
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Services Section */}

@@ -23,7 +23,12 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-4 left-0 right-0 z-50 px-4 flex justify-center pointer-events-none w-full box-border">
-      <div className="max-w-7xl w-full glass border border-white/10 rounded-2xl md:rounded-full px-4 sm:px-6 py-3 flex items-center justify-between relative pointer-events-auto shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl transition-all duration-300 overflow-hidden">
+      <motion.div 
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+        className="max-w-7xl w-full glass border border-white/10 rounded-2xl md:rounded-full px-4 sm:px-6 py-3 flex items-center justify-between relative pointer-events-auto shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl transition-all duration-300"
+      >
         
         {/* Logo Section */}
         <div className="flex-shrink-0 flex items-center z-10">
@@ -108,7 +113,7 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
         {/* Mobile menu Overlay */}
       {isOpen && (

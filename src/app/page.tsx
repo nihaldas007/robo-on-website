@@ -16,6 +16,7 @@ export default function Home() {
   // Programmatic manual play trigger for mobile devices
   useEffect(() => {
     if (videoRef.current) {
+      videoRef.current.muted = true;
       videoRef.current.play().catch(error => {
         console.log("Autoplay was prevented by the browser:", error);
       });
@@ -136,7 +137,10 @@ export default function Home() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center"
         >
-          <div className="w-full flex items-center justify-center lg:w-[600px] relative">
+          <div 
+            className="w-full flex items-center justify-center lg:w-[600px] relative overflow-hidden"
+            style={{ clipPath: 'inset(0% 0% 14% 0%)' }}
+          >
             {/* 
               CUSTOMIZE VIDEO CROP HERE:
               Adjust the percentages inside inset(...) to cut off sections of your video snippet.
@@ -149,12 +153,16 @@ export default function Home() {
               loop
               muted
               playsInline
+              // @ts-ignore
+              webkit-playsinline="true"
               preload="auto"
               className="w-full h-auto object-contain origin-center pointer-events-none saturate-150 contrast-110"
-              style={{ clipPath: 'inset(0% 0% 14% 0%)' }}
               src="/robo-on-website/hero-video.mp4"
               onCanPlay={() => {
-                videoRef.current?.play();
+                if (videoRef.current) {
+                  videoRef.current.muted = true;
+                  videoRef.current.play();
+                }
               }}
             >
               Your browser does not support the video tag.

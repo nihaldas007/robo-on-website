@@ -145,11 +145,11 @@ export default function Home() {
           style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.15) 0%, rgba(22,163,74,0) 70%)' }} 
         />
 
-        {/* Right Side: Video Components (Matches Navbar Animation) */}
+        {/* Right Side: Video Components (Synced with Navbar) */}
         <motion.div 
-          initial={{ y: -20, opacity: 0 }}
+          initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
           className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center"
         >
           <div className="w-full flex items-center justify-center lg:w-[600px] relative">

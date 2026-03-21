@@ -13,14 +13,32 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Programmatic manual play trigger for mobile devices
+  // Programmatic manual play trigger for mobile devices (iOS Safari Friendly)
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.muted = true;
-      videoRef.current.play().catch(error => {
-        console.log("Autoplay was prevented by the browser:", error);
-      });
-    }
+    const playVideo = () => {
+      if (videoRef.current) {
+        videoRef.current.muted = true;
+        videoRef.current.play().catch(() => {});
+      }
+    };
+
+    // Try playing immediately
+    playVideo();
+
+    // Fallback for strict iOS logic: play on first user interaction
+    const handleGesture = () => {
+      playVideo();
+      window.removeEventListener('touchstart', handleGesture);
+      window.removeEventListener('click', handleGesture);
+    };
+
+    window.addEventListener('touchstart', handleGesture);
+    window.addEventListener('click', handleGesture);
+
+    return () => {
+      window.removeEventListener('touchstart', handleGesture);
+      window.removeEventListener('click', handleGesture);
+    };
   }, []);
 
   useEffect(() => {
@@ -145,7 +163,6 @@ export default function Home() {
               preload="auto"
               className="w-full h-auto object-contain origin-center pointer-events-none"
               style={{ clipPath: 'inset(0% 0% 14% 0%)' }}
-              src="/robo-on-website/hero-video.mp4"
               onCanPlay={() => {
                 if (videoRef.current) {
                   videoRef.current.muted = true;
@@ -153,6 +170,7 @@ export default function Home() {
                 }
               }}
             >
+              <source src="/robo-on-website/hero-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

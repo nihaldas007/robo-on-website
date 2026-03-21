@@ -121,9 +121,9 @@ export default function Home() {
 
         {/* Right Side: Video Components */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, rotateX: 10 }}
-          animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center"
         >
           <div className="w-full flex items-center justify-center lg:w-[600px] relative">
@@ -133,10 +133,13 @@ export default function Home() {
               Format: inset(top% right% bottom% left%)
             */}
             <video
+              id="hero-video"
+              key="hero-video"
               autoPlay
               loop
               muted
               playsInline
+              preload="auto"
               className="w-full h-auto object-contain origin-center pointer-events-none saturate-150 contrast-110"
               style={{ clipPath: 'inset(0% 0% 14% 0%)' }}
               src="/robo-on-website/hero-video.mp4"

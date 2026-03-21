@@ -8,6 +8,8 @@ import { db } from "@/lib/firebase";
 import { collection, getDocs, query, limit, orderBy, where } from "firebase/firestore";
 
 export default function Home() {
+  const [featuredCourses, setFeaturedCourses] = useState<any[]>([]);
+  const [featuredProjects, setFeaturedProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -120,11 +122,8 @@ export default function Home() {
         </div>
 
         {/* Soft glow behind the video (outside the screen wrapper) */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: [0.2, 0.4, 0.2], scale: [1, 1.2, 1] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 right-0 -translate-y-1/2 w-full max-w-[500px] h-full max-h-[500px] rounded-full pointer-events-none transform-gpu" 
+        <div 
+          className="absolute top-1/2 right-0 -translate-y-1/2 w-full max-w-[500px] h-full max-h-[500px] rounded-full pointer-events-none transform-gpu opacity-20" 
           style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.15) 0%, rgba(22,163,74,0) 70%)' }} 
         />
 

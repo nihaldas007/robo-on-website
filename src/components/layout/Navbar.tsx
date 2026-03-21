@@ -119,23 +119,29 @@ export default function Navbar() {
           className="absolute top-20 left-4 right-4 lg:hidden bg-black/70 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl pointer-events-auto max-h-[80vh] overflow-y-auto custom-scrollbar z-50 transform-gpu"
         >
           <div className="flex flex-col gap-3">
-            {links.map((link) => {
+            {links.map((link, index) => {
               const Icon = link.icon;
               return (
-                <Link
+                <motion.div
                   key={link.name}
-                  href={link.href}
-                  className="text-gray-300 hover:text-primary p-4 rounded-2xl bg-white/5 border border-transparent hover:border-primary/20 transition-all font-semibold flex items-center justify-between group"
-                  onClick={() => setIsOpen(false)}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05, duration: 0.2 }}
                 >
-                  <div className="flex items-center gap-3">
-                    <Icon size={18} className="text-gray-400 group-hover:text-primary transition-colors" />
-                    <span>{link.name}</span>
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                     <Cpu size={14} className="text-primary" />
-                  </div>
-                </Link>
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-primary p-4 rounded-2xl bg-white/5 border border-transparent hover:border-primary/20 transition-all font-semibold flex items-center justify-between group"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <div className="flex items-center gap-3">
+                      <Icon size={18} className="text-gray-400 group-hover:text-primary transition-colors" />
+                      <span>{link.name}</span>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                       <Cpu size={14} className="text-primary" />
+                    </div>
+                  </Link>
+                </motion.div>
               );
             })}
             

@@ -62,7 +62,11 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       {/* Hero Section */}
-      <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+      {/* 
+        CUSTOMIZE GAP HERE:
+        Change the gap-[1rem] value below to adjust the exact distance between the display and headline on mobile & tablet.
+      */}
+      <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20 lg:py-32 flex flex-col-reverse lg:flex-row items-center justify-between gap-[1rem] lg:gap-12">
         {/* Microcontroller Watermark */}
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 text-primary/5 pointer-events-none">
           <Cpu size={800} strokeWidth={0.5} />
@@ -114,7 +118,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="flex-1 w-full max-w-xl lg:max-w-none mt-12 lg:mt-0 flex justify-center"
+          className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center"
         >
           <div className="w-full flex items-center justify-center lg:w-[600px] relative">
             {/* 

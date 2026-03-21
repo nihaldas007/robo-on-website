@@ -115,6 +115,7 @@ export default function Navbar() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: -10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="absolute top-20 left-4 right-4 lg:hidden bg-black/70 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl pointer-events-auto max-h-[80vh] overflow-y-auto custom-scrollbar z-50 transform-gpu"
         >
           <div className="flex flex-col gap-3">

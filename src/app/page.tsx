@@ -79,7 +79,7 @@ export default function Home() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.2 }}
             className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 max-w-3xl"
           >
             Build the Future with <br className="hidden xl:block" />
@@ -89,7 +89,7 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.2, delay: 0.05 }}
             className="text-base sm:text-lg md:text-xl text-gray-400 mb-10 max-w-2xl px-4 lg:px-0"
           >
             Your premier partner for Embedded Systems, Robotics, PCB Design, Software Development, and expert-led Online Courses.
@@ -98,7 +98,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.2, delay: 0.1 }}
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
             <Link href="/services" className="bg-primary text-black px-8 py-4 rounded-full font-bold hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(11,244,227,0.4)]">
@@ -111,13 +111,13 @@ export default function Home() {
         </div>
 
         {/* Soft glow behind the video (outside the screen wrapper) */}
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-full max-w-[500px] aspect-square bg-primary/20 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-full max-w-[500px] h-full max-h-[500px] rounded-full pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.15) 0%, rgba(22,163,74,0) 70%)' }} />
 
         {/* Right Side: Video Components */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          transition={{ duration: 0.2, delay: 0.05 }}
           className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center"
         >
           <div className="w-full flex items-center justify-center lg:w-[600px] relative">
@@ -161,7 +161,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.2, delay: index * 0.05 }}
                 className="glass-card p-6 rounded-2xl group hover:border-primary/50 transition-colors"
               >
                 <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
@@ -197,7 +197,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.2, delay: index * 0.05 }}
                 className="group relative overflow-hidden rounded-3xl border border-white/10 glass-card"
               >
                 <div className="aspect-[4/3] relative overflow-hidden">
@@ -253,7 +253,7 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.2, delay: index * 0.05 }}
                 className="glass-card rounded-2xl overflow-hidden group flex flex-col"
               >
                 <div className="relative h-48 bg-gradient-to-br from-gray-900 to-[#0a0414] flex items-center justify-center overflow-hidden">

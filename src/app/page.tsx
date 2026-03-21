@@ -79,7 +79,7 @@ export default function Home() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.1 }}
             className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 max-w-3xl"
           >
             Build the Future with <br className="hidden xl:block" />
@@ -89,7 +89,7 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2, delay: 0.05 }}
+            transition={{ duration: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-gray-400 mb-10 max-w-2xl px-4 lg:px-0"
           >
             Your premier partner for Embedded Systems, Robotics, PCB Design, Software Development, and expert-led Online Courses.
@@ -98,7 +98,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2, delay: 0.1 }}
+            transition={{ duration: 0.1 }}
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
             <Link href="/services" className="bg-primary text-black px-8 py-4 rounded-full font-bold hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(11,244,227,0.4)]">
@@ -117,7 +117,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.2, delay: 0.05 }}
+          transition={{ duration: 0.1 }}
           className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center"
         >
           <div className="w-full flex items-center justify-center lg:w-[600px] relative">

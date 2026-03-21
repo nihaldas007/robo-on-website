@@ -26,7 +26,7 @@ export default function AdminDashboard() {
             transition={{ delay: index * 0.1 }}
             className="glass-card p-6 rounded-2xl border border-white/5 relative overflow-hidden group"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 rounded-full -mr-10 -mt-10 transition-all transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }}></div>
+            <div className="absolute top-0 right-0 w-32 h-32 rounded-full -mr-10 -mt-10 transition-all transform-gpu" style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.1) 0%, rgba(22,163,74,0) 70%)' }}></div>
             
             <div className="flex justify-between items-start mb-4 relative z-10">
               <div className="p-3 bg-white/5 rounded-xl border border-white/10 group-hover:border-primary/30 transition-colors">

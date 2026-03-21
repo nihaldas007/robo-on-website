@@ -16,12 +16,12 @@ export default function Home() {
     async function fetchData() {
       try {
         const courseQuery = query(
-          collection(db, "courses"), 
+          collection(db, "courses"),
           where("status", "==", "Published"),
           limit(3)
         );
         const projectQuery = query(collection(db, "projects"), limit(3), orderBy("createdAt", "desc"));
-        
+
         const [courseSnap, projectSnap] = await Promise.all([
           getDocs(courseQuery),
           getDocs(projectQuery)
@@ -62,55 +62,78 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       {/* Hero Section */}
-      <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 flex flex-col items-center text-center overflow-hidden">
+      <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
         {/* Microcontroller Watermark */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary/5 -z-10 pointer-events-none">
+        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 text-primary/5 pointer-events-none">
           <Cpu size={800} strokeWidth={0.5} />
         </div>
-        
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-full max-h-[600px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.15) 0%, rgba(60,179,150,0) 70%)' }} />
-        
+
+        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-full max-h-[600px] rounded-full pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.15) 0%, rgba(22,163,74,0) 70%)' }} />
+
+        {/* Left Side: Text Components */}
+        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left z-10 w-full">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 max-w-3xl"
+          >
+            Build the Future with <br className="hidden xl:block" />
+            <span className="text-gradient">RoboON</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-base sm:text-lg md:text-xl text-gray-400 mb-10 max-w-2xl px-4 lg:px-0"
+          >
+            Your premier partner for Embedded Systems, Robotics, PCB Design, Software Development, and expert-led Online Courses.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+          >
+            <Link href="/services" className="bg-primary text-black px-8 py-4 rounded-full font-bold hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(11,244,227,0.4)]">
+              Explore Services <ArrowRight size={20} />
+            </Link>
+            <Link href="/courses" className="glass px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+              View Courses
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Soft glow behind the video (outside the screen wrapper) */}
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-full max-w-[500px] aspect-square bg-primary/20 blur-[100px] rounded-full pointer-events-none" />
+
+        {/* Right Side: Video Components */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary mb-8"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="flex-1 w-full max-w-xl lg:max-w-none mt-12 lg:mt-0 flex justify-center"
         >
-          <Zap size={16} />
-          <span className="text-sm font-medium">Empowering Innovation</span>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 max-w-4xl"
-        >
-          Build the Future with <br className="hidden md:block" />
-          <span className="text-gradient">RoboON</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-base sm:text-lg md:text-xl text-gray-400 mb-10 max-w-2xl px-4"
-        >
-          Your premier partner for Embedded Systems, Robotics, PCB Design, Software Development, and expert-led Online Courses.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4"
-        >
-          <Link href="/services" className="bg-primary text-black px-8 py-4 rounded-full font-bold hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(11,244,227,0.4)]">
-            Explore Services <ArrowRight size={20} />
-          </Link>
-          <Link href="/courses" className="glass px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
-            View Courses
-          </Link>
+          <div className="w-full flex items-center justify-center lg:w-[600px] relative">
+            {/* 
+              CUSTOMIZE VIDEO CROP HERE:
+              Adjust the percentages inside inset(...) to cut off sections of your video snippet.
+              Format: inset(top% right% bottom% left%)
+            */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto object-contain origin-center pointer-events-none saturate-150 contrast-110"
+              style={{ clipPath: 'inset(0% 0% 14% 0%)' }}
+              src="/robo-on-website/hero-video.mp4"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </motion.div>
       </section>
 
@@ -120,7 +143,7 @@ export default function Home() {
         <div className="absolute top-0 right-0 translate-x-1/4 -translate-y-1/4 text-primary/5 pointer-events-none">
           <Share2 size={600} strokeWidth={0.5} />
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Our <span className="text-primary">Expertise</span></h2>
@@ -150,8 +173,8 @@ export default function Home() {
 
       {/* Featured Projects Section */}
       <section id="projects" className="w-full relative py-24 overflow-hidden">
-        <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-full max-w-[500px] h-full max-h-[500px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
-        
+        <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-full max-w-[500px] h-full max-h-[500px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.1) 0%, rgba(22,163,74,0) 70%)' }} />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl">
@@ -174,10 +197,10 @@ export default function Home() {
                 className="group relative overflow-hidden rounded-3xl border border-white/10 glass-card"
               >
                 <div className="aspect-[4/3] relative overflow-hidden">
-                  <img 
-                    src={project.image || "https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&q=80&w=800"} 
-                    alt={project.title} 
-                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700 brightness-75 group-hover:brightness-100" 
+                  <img
+                    src={project.image || "https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&q=80&w=800"}
+                    alt={project.title}
+                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700 brightness-75 group-hover:brightness-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                   <div className="absolute top-4 left-4">
@@ -207,7 +230,7 @@ export default function Home() {
         </div>
 
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full max-w-[500px] h-full max-h-[500px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(41,42,58,0.4) 0%, rgba(41,42,58,0) 70%)' }} />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
@@ -245,7 +268,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2 line-clamp-2">{course.title}</h3>
                   <p className="text-sm text-gray-400 mb-6">By {course.instructor || 'RoboON Team'}</p>
-                  
+
                   <div className="mt-auto flex items-center justify-between border-t border-white/10 pt-4">
                     <span className="text-2xl font-bold text-white">{course.price}</span>
                     <Link href={`/courses/${course.id || course.title.toLowerCase().replace(/ /g, '-')}`} className="text-sm font-semibold hover:text-primary transition-colors">
@@ -262,7 +285,7 @@ export default function Home() {
       {/* Final Call to Action Section */}
       <section className="w-full relative py-32 overflow-hidden bg-black">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-full max-h-[400px] rounded-full pointer-events-none transform-gpu overflow-hidden" style={{ background: 'radial-gradient(ellipse, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-full max-h-[400px] rounded-full pointer-events-none transform-gpu overflow-hidden" style={{ background: 'radial-gradient(ellipse, rgba(22,163,74,0.1) 0%, rgba(22,163,74,0) 70%)' }} />
         </div>
 
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
@@ -284,15 +307,15 @@ export default function Home() {
               Have a revolutionary idea in Robotics or IoT? Our team of experts is ready to help you engineer, prototype, and scale your vision.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center justify-center gap-3 bg-primary text-black px-12 py-5 rounded-full font-bold text-xl hover:bg-white transition-all shadow-[0_0_40px_rgba(60,179,150,0.4)] active:scale-95 group w-full sm:w-auto"
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-3 bg-primary text-black px-12 py-5 rounded-full font-bold text-xl hover:bg-white transition-all shadow-[0_0_40px_rgba(22,163,74,0.4)] active:scale-95 group w-full sm:w-auto"
               >
                 Start Your Project <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
               </Link>
-              <a 
-                href="https://wa.me/8801319759370" 
-                target="_blank" 
+              <a
+                href="https://wa.me/8801319759370"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-white hover:text-[#25D366] transition-all shadow-[0_0_40px_rgba(37,211,102,0.3)] active:scale-95 group w-full sm:w-auto"
               >

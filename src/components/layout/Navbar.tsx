@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Menu, X, Cpu, User as UserIcon, LogOut } from "lucide-react";
+import { Menu, X, Cpu, User as UserIcon, LogOut, Home, Briefcase, BookOpen, FolderOpen, Info } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "@/lib/AuthContext";
 import { auth } from "@/lib/firebase";
@@ -14,19 +14,19 @@ export default function Navbar() {
   const ADMIN_EMAILS = ["admin@roboonbd.com", "roboonbd@gmail.com"];
 
   const links = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Courses", href: "/courses" },
-    { name: "Projects", href: "/projects" },
-    { name: "About Us", href: "/about" },
+    { name: "Home", href: "/", icon: Home },
+    { name: "Services", href: "/services", icon: Briefcase },
+    { name: "Courses", href: "/courses", icon: BookOpen },
+    { name: "Projects", href: "/projects", icon: FolderOpen },
+    { name: "About Us", href: "/about", icon: Info },
   ];
 
   return (
     <nav className="fixed top-4 left-0 right-0 z-50 px-4 flex justify-center pointer-events-none w-full box-border">
-      <div className="max-w-7xl w-full glass border border-white/10 rounded-2xl md:rounded-full px-4 sm:px-6 py-3 flex items-center justify-between pointer-events-auto shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl transition-all duration-300 overflow-hidden">
+      <div className="max-w-7xl w-full glass border border-white/10 rounded-2xl md:rounded-full px-4 sm:px-6 py-3 flex items-center justify-between relative pointer-events-auto shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl transition-all duration-300 overflow-hidden">
         
         {/* Logo Section */}
-        <div className="flex-shrink-0 flex items-center">
+        <div className="flex-shrink-0 flex items-center z-10">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="p-2 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors border border-primary/20">
               <img 
@@ -38,21 +38,25 @@ export default function Navbar() {
           </Link>
         </div>
         
-        {/* Navigation & User Area (Right Aligned) */}
-        <div className="flex items-center gap-6">
-          {/* Desktop Links */}
-          <div className="hidden lg:flex items-center space-x-1">
-            {links.map((link) => (
+        {/* Desktop Links (Centered) */}
+        <div className="hidden lg:flex items-center space-x-1 absolute left-1/2 -translate-x-1/2 z-10">
+          {links.map((link) => {
+            const Icon = link.icon;
+            return (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-gray-400 hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-all hover:bg-white/5 active:scale-95"
+                className="text-gray-400 hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-all hover:bg-white/5 active:scale-95 flex items-center gap-2"
               >
-                {link.name}
+                <Icon size={16} />
+                <span>{link.name}</span>
               </Link>
-            ))}
-          </div>
-          
+            );
+          })}
+        </div>
+        
+        {/* Navigation & User Area (Right Aligned) */}
+        <div className="flex items-center gap-2 z-10">
           {/* User Interaction Area */}
           <div className="flex items-center gap-2">
             <div className="hidden md:flex items-center bg-black/40 border border-white/5 rounded-full p-1 pl-4 gap-3">
@@ -66,7 +70,7 @@ export default function Navbar() {
                   <div className="flex items-center gap-1">
                     <Link
                       href={role === 'admin' || role === 'moderator' ? "/admin" : "/dashboard"}
-                      className="w-10 h-10 flex items-center justify-center bg-primary text-black rounded-full hover:bg-white transition-all shadow-[0_0_15px_rgba(60,179,150,0.4)] hover:shadow-primary active:scale-90"
+                      className="w-10 h-10 flex items-center justify-center bg-primary text-black rounded-full hover:bg-white transition-all shadow-[0_0_15px_rgba(22,163,74,0.4)] hover:shadow-primary active:scale-90"
                       title="Dashboard"
                     >
                       <UserIcon size={20} strokeWidth={2.5} />
@@ -85,7 +89,7 @@ export default function Navbar() {
                   <span className="text-xs text-gray-500 font-medium pr-2">Guest Mode</span>
                   <Link
                     href="/login"
-                    className="bg-primary text-black px-6 py-2 rounded-full text-sm font-bold transition-all shadow-[0_0_20px_rgba(60,179,150,0.3)] hover:shadow-primary hover:bg-white active:scale-95"
+                    className="bg-primary text-black px-6 py-2 rounded-full text-sm font-bold transition-all shadow-[0_0_20px_rgba(22,163,74,0.3)] hover:shadow-primary hover:bg-white active:scale-95"
                   >
                     Sign In
                   </Link>
@@ -114,19 +118,25 @@ export default function Navbar() {
           className="absolute top-20 left-4 right-4 lg:hidden bg-black/70 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl pointer-events-auto max-h-[80vh] overflow-y-auto custom-scrollbar z-50 transform-gpu"
         >
           <div className="flex flex-col gap-3">
-            {links.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-gray-300 hover:text-primary p-4 rounded-2xl bg-white/5 border border-transparent hover:border-primary/20 transition-all font-semibold flex items-center justify-between group"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                   <Cpu size={14} className="text-primary" />
-                </div>
-              </Link>
-            ))}
+            {links.map((link) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-gray-300 hover:text-primary p-4 rounded-2xl bg-white/5 border border-transparent hover:border-primary/20 transition-all font-semibold flex items-center justify-between group"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <div className="flex items-center gap-3">
+                    <Icon size={18} className="text-gray-400 group-hover:text-primary transition-colors" />
+                    <span>{link.name}</span>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                     <Cpu size={14} className="text-primary" />
+                  </div>
+                </Link>
+              );
+            })}
             
             <div className="mt-4 pt-6 border-t border-white/10">
               {user ? (
@@ -160,7 +170,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   href="/login"
-                  className="flex items-center justify-center w-full py-4 bg-primary text-black rounded-2xl font-bold shadow-[0_0_20px_rgba(60,179,150,0.3)] hover:bg-white transition-colors"
+                  className="flex items-center justify-center w-full py-4 bg-primary text-black rounded-2xl font-bold shadow-[0_0_20px_rgba(22,163,74,0.3)] hover:bg-white transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Get Started

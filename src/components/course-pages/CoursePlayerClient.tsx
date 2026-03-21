@@ -154,7 +154,7 @@ export default function CoursePlayerClient() {
     return (
       <div className="min-h-screen bg-[#060606] flex items-center justify-center p-6">
         <div className="max-w-md w-full glass-card p-10 rounded-[32px] border border-white/5 text-center relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
+          <div className="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.1) 0%, rgba(22,163,74,0) 70%)' }} />
           <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-8 border border-primary/20">
             {isPending ? <Clock size={40} className="text-primary animate-pulse" /> : <Lock size={40} className="text-primary" />}
           </div>
@@ -170,7 +170,7 @@ export default function CoursePlayerClient() {
             {!isPending && (
               <Link 
                 href={`/courses/${courseId}`}
-                className="block w-full bg-primary text-black font-bold py-4 rounded-2xl hover:bg-white transition-all shadow-[0_0_20px_rgba(60,179,150,0.3)]"
+                className="block w-full bg-primary text-black font-bold py-4 rounded-2xl hover:bg-white transition-all shadow-[0_0_20px_rgba(22,163,74,0.3)]"
               >
                 Enroll in Course
               </Link>

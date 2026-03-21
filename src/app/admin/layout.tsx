@@ -110,7 +110,7 @@ export default function AdminLayout({
               <p className="text-sm font-bold text-white">{userData?.fullName || "Admin User"}</p>
               <p className="text-xs text-gray-500 capitalize">{role}</p>
             </div>
-            <div className="h-10 w-10 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center text-primary font-bold shadow-[0_0_15px_rgba(60,179,150,0.2)]">
+            <div className="h-10 w-10 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center text-primary font-bold shadow-[0_0_15px_rgba(22,163,74,0.2)]">
               {(userData?.fullName || "Admin")[0]}
             </div>
           </div>

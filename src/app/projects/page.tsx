@@ -45,7 +45,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 relative z-10">
         
         <div className="text-center mb-12 sm:mb-20 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.15) 0%, rgba(60,179,150,0) 70%)' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.15) 0%, rgba(22,163,74,0) 70%)' }} />
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ export default function Projects() {
         
         <div className="mt-20 text-center">
           <p className="text-gray-400 mb-6">Have a challenging idea in mind?</p>
-          <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-primary text-black hover:bg-white px-8 py-4 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(60,179,150,0.3)]">
+          <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-primary text-black hover:bg-white px-8 py-4 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(22,163,74,0.3)]">
             Let's Build It Together <Wrench size={18} />
           </Link>
         </div>

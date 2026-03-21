@@ -67,7 +67,7 @@ export default function SettingsPage() {
       <div className="min-h-screen pt-28 pb-20 px-4 relative overflow-hidden">
         {/* Background Accents */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10 opacity-20 pointer-events-none">
-          <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.15) 0%, rgba(60,179,150,0) 70%)' }} />
+          <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full transform-gpu" style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.15) 0%, rgba(22,163,74,0) 70%)' }} />
           <div className="absolute bottom-40 left-0 w-[300px] h-[300px] rounded-full transform-gpu" style={{ background: 'radial-gradient(circle, rgba(41,42,58,0.3) 0%, rgba(41,42,58,0) 70%)' }} />
         </div>
 
@@ -152,7 +152,7 @@ export default function SettingsPage() {
                     <button 
                       type="submit"
                       disabled={loading || !feedback.trim()}
-                      className="px-8 py-3 bg-primary text-black font-bold rounded-xl hover:bg-white transition-all shadow-[0_0_20px_rgba(60,179,150,0.2)] disabled:opacity-50 flex items-center gap-2"
+                      className="px-8 py-3 bg-primary text-black font-bold rounded-xl hover:bg-white transition-all shadow-[0_0_20px_rgba(22,163,74,0.2)] disabled:opacity-50 flex items-center gap-2"
                     >
                       Submit Feedback <Send size={18} />
                     </button>

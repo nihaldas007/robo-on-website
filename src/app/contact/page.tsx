@@ -47,7 +47,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen pt-32 pb-20 px-4 relative overflow-hidden">
       {/* Visual background elements */}
-      <div className="absolute top-0 right-0 w-full max-w-[500px] h-full max-h-[500px] rounded-full -z-10 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
+      <div className="absolute top-0 right-0 w-full max-w-[500px] h-full max-h-[500px] rounded-full -z-10 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.1) 0%, rgba(22,163,74,0) 70%)' }} />
       <div className="absolute bottom-0 left-0 w-full max-w-[400px] h-full max-h-[400px] rounded-full -z-10 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(41,42,58,0.2) 0%, rgba(41,42,58,0) 70%)' }} />
 
       <div className="max-w-4xl mx-auto">
@@ -136,7 +136,7 @@ export default function ContactPage() {
                     <button 
                       type="submit"
                       disabled={loading}
-                      className="px-10 py-4 bg-primary text-black font-bold rounded-2xl hover:bg-white transition-all shadow-[0_0_30px_rgba(60,179,150,0.3)] disabled:opacity-50 flex items-center gap-2 text-lg active:scale-95"
+                      className="px-10 py-4 bg-primary text-black font-bold rounded-2xl hover:bg-white transition-all shadow-[0_0_30px_rgba(22,163,74,0.3)] disabled:opacity-50 flex items-center gap-2 text-lg active:scale-95"
                     >
                       {loading ? "Sending..." : "Submit Proposal"} <Send size={20} />
                     </button>

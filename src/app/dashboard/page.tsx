@@ -192,7 +192,7 @@ export default function Dashboard() {
               </div>
               <h3 className="text-xl font-bold text-white">No active courses</h3>
               <p className="text-gray-400 max-w-sm">You haven't enrolled in any courses yet. Start your journey by exploring our available programs.</p>
-              <Link href="/courses" className="mt-4 px-8 py-3 bg-primary text-black font-bold rounded-xl hover:bg-white transition-all shadow-[0_0_20px_rgba(60,179,150,0.2)]">
+              <Link href="/courses" className="mt-4 px-8 py-3 bg-primary text-black font-bold rounded-xl hover:bg-white transition-all shadow-[0_0_20px_rgba(22,163,74,0.2)]">
                 Browse Courses
               </Link>
             </motion.div>

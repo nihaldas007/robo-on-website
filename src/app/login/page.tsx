@@ -91,7 +91,7 @@ export default function Login() {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center relative overscroll-none pt-20 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.15) 0%, rgba(60,179,150,0) 70%)' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full -z-10 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.15) 0%, rgba(22,163,74,0) 70%)' }} />
       
       <div className="glass-card w-full max-w-md p-8 rounded-3xl border border-white/5 relative z-10 shadow-2xl">
         <div className="flex flex-col items-center mb-8">
@@ -228,7 +228,7 @@ export default function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-white hover:text-black transition-all transform hover:-translate-y-0.5 shadow-[0_0_20px_rgba(60,179,150,0.3)] disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-white hover:text-black transition-all transform hover:-translate-y-0.5 shadow-[0_0_20px_rgba(22,163,74,0.3)] disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {loading ? <Loader2 className="animate-spin" size={20} /> : (isLogin ? "Sign In" : "Create Account")}
           </button>

@@ -72,7 +72,7 @@ function EnrollmentModal({ isOpen, onClose, courseTitle, coursePrice, courseId }
         animate={{ opacity: 1, scale: 1 }}
         className="glass-card w-full max-w-md p-6 sm:p-8 rounded-[32px] border border-white/10 relative my-auto shadow-2xl"
       >
-        <div className="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.1) 0%, rgba(60,179,150,0) 70%)' }} />
+        <div className="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.1) 0%, rgba(22,163,74,0) 70%)' }} />
         
         {success ? (
           <div className="text-center py-10">
@@ -156,7 +156,7 @@ function EnrollmentModal({ isOpen, onClose, courseTitle, coursePrice, courseId }
               <button 
                 type="submit" 
                 disabled={loading}
-                className="w-full bg-primary text-black font-bold py-3.5 sm:py-4 rounded-xl hover:bg-white transition-all shadow-[0_0_20px_rgba(60,179,150,0.3)] disabled:opacity-50 mt-2"
+                className="w-full bg-primary text-black font-bold py-3.5 sm:py-4 rounded-xl hover:bg-white transition-all shadow-[0_0_20px_rgba(22,163,74,0.3)] disabled:opacity-50 mt-2"
               >
                 {loading ? "Verifying..." : "Confirm Enrollment"}
               </button>
@@ -236,7 +236,7 @@ export default function CourseDetailsClient() {
         courseId={params.id as string}
       />
       <div className="relative border-b border-white/10 bg-black/60 pt-16 pb-12 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(ellipse at top, rgba(60,179,150,0.08) 0%, rgba(60,179,150,0) 70%)' }} />
+        <div className="absolute inset-0 pointer-events-none transform-gpu" style={{ background: 'radial-gradient(ellipse at top, rgba(22,163,74,0.08) 0%, rgba(22,163,74,0) 70%)' }} />
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-12 relative z-10">
           
           <div className="lg:w-2/3">
@@ -360,7 +360,7 @@ export default function CourseDetailsClient() {
             
             {/* Start Learning Callout for testing the streaming UI */}
             <div className="mt-8 p-6 bg-primary/10 border border-primary/20 rounded-xl relative overflow-hidden">
-               <div className="absolute right-0 top-0 w-32 h-32 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(60,179,150,0.15) 0%, rgba(60,179,150,0) 70%)' }}></div>
+               <div className="absolute right-0 top-0 w-32 h-32 transform-gpu" style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.15) 0%, rgba(22,163,74,0) 70%)' }}></div>
                <h3 className="text-lg font-bold text-white mb-2">Already purchased?</h3>
                <p className="text-sm text-gray-400 mb-4">Go to your dashboard to start learning immediately.</p>
                <Link href={`/learn/${params.id}`} className="inline-flex items-center gap-2 bg-primary text-black font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-white transition-colors">

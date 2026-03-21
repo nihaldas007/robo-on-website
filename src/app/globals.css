@@ -44,14 +44,14 @@ html {
     --background: #15161e;
     --foreground: #ffffff;
     
-    /* Logo Teal & Dark Navy */
-    --primary: #3cb396;
-    --primary-foreground: #ffffff;
+    /* User Specific Solid Green Theme */
+    --primary: #16a34a;
+    --primary-foreground: #ffffff; /* White text on dark green */
     
     --secondary: #292a3a;
     --secondary-foreground: #ffffff;
     
-    --accent: #50c4a7;
+    --accent: #22c55e;
     --accent-foreground: #ffffff;
     
     --muted: #1f202e;
@@ -61,7 +61,7 @@ html {
     --card: #1a1b26;
     --card-foreground: #ffffff;
     
-    --ring: #3cb396;
+    --ring: #16a34a;
     
     --radius: 0.75rem;
   }

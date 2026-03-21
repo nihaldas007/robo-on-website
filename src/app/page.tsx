@@ -127,8 +127,13 @@ export default function Home() {
           style={{ background: 'radial-gradient(circle, rgba(22,163,74,0.15) 0%, rgba(22,163,74,0) 70%)' }} 
         />
 
-        {/* Right Side: Video Components (No Animation) */}
-        <div className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center">
+        {/* Right Side: Video Components (Fade-in only) */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center"
+        >
           <div className="w-full flex items-center justify-center lg:w-[600px] relative">
             <video
               id="hero-video"
@@ -151,7 +156,7 @@ export default function Home() {
               Your browser does not support the video tag.
             </video>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Services Section */}

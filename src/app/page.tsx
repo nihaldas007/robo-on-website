@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Code, Laptop, Zap, Settings, Cpu, Cuboid, PlayCircle, Star, Share2, Phone } from "lucide-react";
@@ -11,6 +11,16 @@ export default function Home() {
   const [featuredCourses, setFeaturedCourses] = useState<any[]>([]);
   const [featuredProjects, setFeaturedProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Programmatic manual play trigger for mobile devices
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Autoplay was prevented by the browser:", error);
+      });
+    }
+  }, []);
 
   useEffect(() => {
     async function fetchData() {
@@ -134,7 +144,7 @@ export default function Home() {
             */}
             <video
               id="hero-video"
-              key="hero-video"
+              ref={videoRef}
               autoPlay
               loop
               muted
@@ -143,6 +153,9 @@ export default function Home() {
               className="w-full h-auto object-contain origin-center pointer-events-none saturate-150 contrast-110"
               style={{ clipPath: 'inset(0% 0% 14% 0%)' }}
               src="/robo-on-website/hero-video.mp4"
+              onCanPlay={() => {
+                videoRef.current?.play();
+              }}
             >
               Your browser does not support the video tag.
             </video>

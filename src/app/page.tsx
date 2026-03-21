@@ -88,9 +88,9 @@ export default function Home() {
         {/* Left Side: Text Components */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left z-10 w-full">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.1 }}
             className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 max-w-3xl"
           >
             Build the Future with <br className="hidden xl:block" />
@@ -100,7 +100,7 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            transition={{ duration: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-gray-400 mb-10 max-w-2xl px-4 lg:px-0"
           >
             Your premier partner for Embedded Systems, Robotics, PCB Design, Software Development, and expert-led Online Courses.
@@ -109,7 +109,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            transition={{ duration: 0.1 }}
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
             <Link href="/services" className="bg-primary text-black px-8 py-4 rounded-full font-bold hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(11,244,227,0.4)]">
@@ -132,15 +132,12 @@ export default function Home() {
 
         {/* Right Side: Video Components */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.1 }}
           className="flex-1 w-full max-w-xl lg:max-w-none flex justify-center"
         >
-          <div 
-            className="w-full flex items-center justify-center lg:w-[600px] relative overflow-hidden"
-            style={{ clipPath: 'inset(0% 0% 14% 0%)' }}
-          >
+          <div className="w-full flex items-center justify-center lg:w-[600px] relative">
             {/* 
               CUSTOMIZE VIDEO CROP HERE:
               Adjust the percentages inside inset(...) to cut off sections of your video snippet.
@@ -153,10 +150,9 @@ export default function Home() {
               loop
               muted
               playsInline
-              // @ts-ignore
-              webkit-playsinline="true"
               preload="auto"
-              className="w-full h-auto object-contain origin-center pointer-events-none saturate-150 contrast-110"
+              className="w-full h-auto object-contain origin-center pointer-events-none"
+              style={{ clipPath: 'inset(0% 0% 14% 0%)' }}
               src="/robo-on-website/hero-video.mp4"
               onCanPlay={() => {
                 if (videoRef.current) {
